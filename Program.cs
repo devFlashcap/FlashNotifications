@@ -8,10 +8,11 @@ namespace FlashNotifications
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            using (TrayIcon trayIcon = new TrayIcon())
+            {
+                trayIcon.Show();
+            }
             ApplicationConfiguration.Initialize();
             Application.Run();
         }
     }
-}
