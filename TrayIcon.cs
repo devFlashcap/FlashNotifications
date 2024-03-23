@@ -12,7 +12,10 @@ namespace FlashNotifications
 
         public TrayIcon()
         {
-            NotifyIcon = new NotifyIcon();
+            NotifyIcon = new NotifyIcon()
+            {
+                Icon = new Icon("res/nonotification.png")
+            };
         }
 
         public void Dispose()

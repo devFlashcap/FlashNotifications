@@ -11,8 +11,9 @@ namespace FlashNotifications
             using (TrayIcon trayIcon = new TrayIcon())
             {
                 trayIcon.Show();
+                ApplicationConfiguration.Initialize();
+                Application.Run();
             }
-            ApplicationConfiguration.Initialize();
-            Application.Run();
         }
     }
+}
