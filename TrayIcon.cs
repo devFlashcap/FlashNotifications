@@ -14,13 +14,23 @@ namespace FlashNotifications
         {
             NotifyIcon = new NotifyIcon()
             {
-                Icon = new Icon("res/nonotification.png")
+                Icon = new Icon("res/nonotification.ico"),
+                ContextMenuStrip = new ContextMenuStrip(),
+                Visible = true
             };
+
+            NotifyIcon.ContextMenuStrip.Items.Add("Exit", null, this.OnClickExit);
+
+        }
+
+        private void OnClickExit(object? sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void Show()
